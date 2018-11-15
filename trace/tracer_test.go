@@ -3,6 +3,12 @@ import (
   "testing"
   "bytes"
 )
+
+func TestOff(t *testing.T) {
+  var silentTracer Tracer = Off()
+  silentTracer.Trace("something")
+}
+
 func TestNew(t *testing.T) {
   var buf bytes.Buffer
   tracer := New(&buf)
